@@ -1,0 +1,95 @@
+<!--
+File: HW4.html
+GUI Assignment: Multiplication Table
+Ibrahim Swati, UMass Lowell Computer Science, iswati@cs.uml.edu
+Copyright (c) 2021 by Ibrahim. All rights reserved. May be freely copied or excerpted for educational purposes with credit to the author.
+updated by IS on August 9, 2021 at 5:46PM
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HW4 Multiplication Table</title>
+	<link rel="stylesheet" href="images/.png">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style31.css">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+		integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+		integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+	<style src="css/HW4.css"></style>
+
+</head>
+
+<body>
+	<div class="container" id="center">
+		<div class="columns center">
+			<div style="width: 100%;">
+				<div class="rows" style="display: inline-flex; padding: 5px;">
+					<label style="font-weight:bold;padding-left:20px">Number Of Rows</label>
+					<input type="num" name="" id="rowsinput" value="50" class="labelinput" onchange="rowsinputfun()">
+					<!-- <label style="font-weight:bold;padding-left:20px; border-width: 2px;">50</label> -->
+					<div class="slidecontainer">
+						<input type="range" min="1" max="100" value="50" class="slider" id="rows"
+							onchange="rowssliderfun()">
+					</div>
+				</div>
+				<div class="rows" style="display: inline-flex; padding: 5px;">
+					<label style="font-weight:bold;padding-left:20px">Number Of Columns</label>
+					<input type="num" name="" id="colinput" value="50" class="labelinput" onchange="colsinputfun()">
+					<div class="slidecontainer">
+						<input type="range" min="1" max="100" value="50" class="slider" id="col"
+							onchange="colssliderfun()">
+					</div>
+				</div>
+				<div class="rows" style="display: inline-flex; padding: 5px;">
+					<label style="font-weight:bold;padding-left:20px">Column Starting Value</label>
+					<input type="num" name="" id="colstartinput" value="0" class="labelinput"
+						onchange="colsstartinputfun()">
+					<div class="slidecontainer">
+						<input type="range" min="-50" max="50" value="0" class="slider" id="colstart"
+							onchange="colsstartsliderfun()">
+					</div>
+				</div>
+				<div class="rows" style="display: inline-flex; padding: 5px;">
+					<label style="font-weight:bold;padding-left:20px">Row Starting Value</label>
+					<input type="num" name="" id="rowstartinput" value="0" class="labelinput"
+						onchange="rowsstartinputfun()">
+					<div class="slidecontainer">
+						<input type="range" min="-50" max="50" value="0" class="slider" id="rowstart"
+							onchange="rowsstartsliderfun()">
+					</div>
+				</div>
+			</div>
+			<button type="button" class="btn btn-success" onclick="saveTable()"
+				style="width:100px;margin-left:20px;height:40px;margin-top:5px">Save</button><br><br>
+			<table style="font-family: arial, sans-serif;border-collapse: collapse;width: 100%;">
+				<tbody id="tabled">
+				</tbody>
+			</table>
+
+			<br><br>
+
+			<div id="savetabledata">
+
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="js/HW4.js">
+</script>
